@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FunFunVancouver</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    
+    <header>
+        <div class="header-container">
+            <a href="index.html">
+                <div class="logo">FunFunVancouver</div>
+            </a>
+            <div class="links">
+                <div id="fav" class="menu">
+                    <a href="fav.html" id="">お気に入り</a>
+                    <div id="fav_count" class="">
+                        <p class="caption">0</p>
+                    </div>
+                </div>
+                <a href="" id="save" class="menu">保存済みプラン</a>
+                <button class="blue-btn sm">おすすめ観光地診断</button>
+            </div>
+        </div>
+    </header>
+
+    <main class="section">
+        <div class="heading-area">
+            <h2>バンクーバーおすすめ観光地診断</h2>
+            <img src="img/line.png" alt="" class="underline">
+        </div>
+        <div class="container">
+            <p>おすすめの観光地を紹介するために、あなた好みの旅行について教えてください！</p>
+        </div>
+    </main>
+
+    <div>
+        <div id="diagnosis" class="section">
+            <h3>下の質問に答えてください</h3>
+            <div class="questions">
+                <div id="season" class="question">
+                    <h4>どの季節にバンクーバーを訪れる予定ですか？</h4>
+                    <div class="answers">
+                        <button id="spring" class="season-answer white-btn sm">春（4月~6月）</button>
+                        <button id="summer" class="season-answer white-btn sm">夏（7月~8月）</button>
+                        <button id="fall" class="season-answer white-btn sm">秋（9月~11月）</button>
+                        <button id="winter" class="season-answer white-btn sm">冬（12月~3月）</button>
+                    </div>
+                </div>
+                <div id="number" class="question">
+                    <h4>何人で旅行しますか？</h4>
+                    <div class="answers">
+                        <button id="1" class="number-answer white-btn sm">1人</button>
+                        <button id="2" class="number-answer white-btn sm">2人</button>
+                        <button id="3-4" class="number-answer white-btn sm">3~4人</button>
+                        <button id="5" class="number-answer white-btn sm">5人以上</button>
+                    </div>
+                </div>
+                <div id="popularity" class="question">
+                    <h4>旅行で訪れたい場所は？</h4>
+                    <div class="answers">
+                        <button id="popular" class="popularity-answer white-btn sm">有名な観光地を訪れたい</button>
+                        <button id="local" class="popularity-answer white-btn sm">地元の人しか知らないような場所を訪れたい</button>
+                    </div>
+                </div>
+                <div id="inout" class="question">
+                    <h4>今回の旅行で訪れたいのは？</h4>
+                    <div class="answers">
+                        <button id="indoor" class="inout-answer white-btn sm">屋内の施設中心</button>
+                        <button id="both" class="inout-answer white-btn sm">屋内/屋外で半々</button>
+                        <button id="outdoor" class="inout-answer white-btn sm">屋外の施設中心</button>
+                    </div>
+                </div>
+                <div id="cost" class="question">
+                    <h4>旅行でのお金の使い方は？</h4>
+                    <div class="answers">
+                        <p class="label">コスト重視</p>
+                        <input type="range" id="inputSlideBar" min="-2" max="2" step="1" class="cost-answer">
+                        <p class="label">クオリティ重視</p>
+                        <!-- <span id="sliderValue">0</span> スライダーの値を表示するための要素 -->
+                    </div>
+                </div>
+            </div>
+            <button id="send" class="red-btn md">診断結果を見る</button>
+        </div>
+    </div>
+    <div id="results" class="results">
+        <div class="result-title section">
+            <div class="heading-area">
+                <h2>バンクーバーおすすめ観光地診断結果</h2>
+                <img src="img/line.png" alt="" class="underline">
+            </div>
+            <div class="container">
+                <p>診断の結果、あなたにぴったりの観光地が <span id="hit">0</span> 件見つかりました！<br>気に入った観光地は、ハートマークを押して「お気に入り」に登録してください。</p>
+            </div>
+            <button id="reset" class="red-btn md">診断をやり直す</button>
+        </div>
+
+        <div class="results-area section">
+            <div class="landmarks">
+                <h3>観光スポット・有名建造物</h3>
+
+                <div class="result-cards">
+
+                    <div target="_blank" id="01" class="card">
+                        <div class="photo-container">
+                            <a href="https://maps.app.goo.gl/XJJSdgzW3j1LAUxw6" target="_blank">
+                                <img src="img/01.jpeg" alt="" class="photo">
+                            </a>
+                        </div>
+                        <div class="text-area">
+                            <a href="https://maps.app.goo.gl/XJJSdgzW3j1LAUxw6" target="_blank">
+                                <h5>スタンレーパーク</h5>
+                            </a>
+                            <p class="explanation"></p>説明文を入れる</p>
+                            <i class="fa-regular fa-heart fa-lg"></i>
+                        </div>
+                    </div>
+
+                    <div target="_blank" id="02" class="card">
+                        <div class="photo-container">
+                            <a href="https://maps.app.goo.gl/cJMAR6Ba4x7w5reG6" target="_blank">
+                                <img src="img/02.jpeg" alt="" class="photo">
+                            </a>
+                        </div>
+                        <div class="text-area">
+                            <a href="https://maps.app.goo.gl/cJMAR6Ba4x7w5reG6" target="_blank">
+                                <h5>グランビルアイランド</h5>
+                            </a>
+                            <p class="explanation"></p>説明文を入れる</p>
+                            <i class="fa-regular fa-heart fa-lg"></i>
+                        </div>
+                    </div>
+
+                    <div target="_blank" id="03" class="card">
+                        <div class="photo-container">
+                            <a href="https://maps.app.goo.gl/7cHusRfnnLgpP7Nz5" target="_blank">
+                                <img src="img/03.jpg" alt="" class="photo">
+                            </a>
+                        </div>
+                        <div class="text-area">
+                            <a href="https://maps.app.goo.gl/7cHusRfnnLgpP7Nz5" target="_blank">
+                                <h5>グラウスマウンテン</h5>
+                            </a>
+                            <p class="explanation"></p>説明文を入れる</p>
+                            <i class="fa-regular fa-heart fa-lg"></i>
+                        </div>
+                    </div>
+
+                    <div target="_blank" id="04" class="card">
+                        <div class="photo-container">
+                            <a href="https://maps.app.goo.gl/YA7b1hF8b9wbeeybA" target="_blank">
+                                <img src="img/04.jpeg" alt="" class="photo">
+                            </a>
+                        </div>
+                        <div class="text-area">
+                            <a href="https://maps.app.goo.gl/YA7b1hF8b9wbeeybA" target="_blank">
+                                <h5>ギャスタウン</h5>
+                            </a>
+                            <p class="explanation"></p>説明文を入れる</p>
+                            <i class="fa-regular fa-heart fa-lg"></i>
+                        </div>
+                    </div>
+
+                    <div target="_blank" id="05" class="card">
+                        <div class="photo-container">
+                            <a href="https://maps.app.goo.gl/e4futCwbcYMM9DxZ9" target="_blank">
+                                <img src="img/05.jpeg" alt="" class="photo">
+                            </a>
+                        </div>
+                        <div class="text-area">
+                            <a href="https://maps.app.goo.gl/e4futCwbcYMM9DxZ9" target="_blank">
+                                <h5>キャピラノ吊橋公園</h5>
+                            </a>
+                            <p class="explanation"></p>説明文を入れる</p>
+                            <i class="fa-regular fa-heart fa-lg"></i>
+                        </div>
+                    </div>
+
+                    <div target="_blank" id="06" class="card">
+                        <div class="photo-container">
+                            <a href="https://maps.app.goo.gl/XJJSdgzW3j1LAUxw6" target="_blank">
+                                <img src="img/06.jpeg" alt="" class="photo">
+                            </a>
+                        </div>
+                        <div class="text-area">
+                            <a href="https://maps.app.goo.gl/XJJSdgzW3j1LAUxw6" target="_blank">
+                                <h5>バンクーバー水族館</h5>
+                            </a>
+                            <p class="explanation"></p>説明文を入れる</p>
+                            <i class="fa-regular fa-heart fa-lg"></i>
+                        </div>
+                    </div>
+
+                    <div target="_blank" id="07" class="card">
+                        <div class="photo-container">
+                            <a href="https://maps.app.goo.gl/SdhEVfvVFZbCuA3k6" target="_blank">
+                                <img src="img/07.jpg" alt="" class="photo">
+                            </a>
+                        </div>
+                        <div class="text-area">
+                            <a href="https://maps.app.goo.gl/SdhEVfvVFZbCuA3k6" target="_blank">
+                                <h5>サイエンスワールド</h5>
+                            </a>
+                            <p class="explanation"></p>説明文を入れる</p>
+                            <i class="fa-regular fa-heart fa-lg"></i>
+                        </div>
+                    </div>
+
+                    <div target="_blank" id="08" class="card">
+                        <div class="photo-container">
+                            <a href="https://maps.app.goo.gl/iu1g3Yu4DLtqGYPN6" target="_blank">
+                                <img src="img/08.jpeg" alt="" class="photo">
+                            </a>
+                        </div>
+                        <div class="text-area">
+                            <a href="https://maps.app.goo.gl/iu1g3Yu4DLtqGYPN6" target="_blank">
+                                <h5>クイーンエリザベス公園</h5>
+                            </a>
+                            <p class="explanation"></p>説明文を入れる</p>
+                            <i class="fa-regular fa-heart fa-lg"></i>
+                        </div>
+                    </div>
+
+                    <div target="_blank" id="09" class="card">
+                        <div class="photo-container">
+                            <a href="https://maps.app.goo.gl/yZom97yJSFiwLPYu6" target="_blank">
+                                <img src="img/09.jpeg" alt="" class="photo">
+                            </a>
+                        </div>
+                        <div class="text-area">
+                            <a href="https://maps.app.goo.gl/yZom97yJSFiwLPYu6" target="_blank">
+                                <h5>ライトハウスパーク</h5>
+                            </a>
+                            <p class="explanation"></p>説明文を入れる</p>
+                            <i class="fa-regular fa-heart fa-lg"></i>
+                        </div>
+                    </div>
+
+                    <div target="_blank" id="10" class="card">
+                        <div class="photo-container">
+                            <a href="https://maps.app.goo.gl/sTX2BWvFrswKT4Ww6" target="_blank">
+                                <img src="img/10.jpeg" alt="" class="photo">
+                            </a>
+                        </div>
+                        <div class="text-area">
+                            <a href="https://maps.app.goo.gl/sTX2BWvFrswKT4Ww6" target="_blank">
+                                <h5>バンクーバー展望台</h5>
+                            </a>
+                            <p class="explanation"></p>説明文を入れる</p>
+                            <i class="fa-regular fa-heart fa-lg"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+        $(document).ready(function() {
+
+        //----------------------ここから見た目の装飾系----------------------
+        //ボタンのクリックアクション
+        $('.season-answer').click(function() {
+            $('.season-answer').removeClass('selected'); // すべてのボタンからselectedクラスを削除
+            $(this).addClass('selected'); // クリックされたボタンにselectedクラスを追加
+        });
+        $('.number-answer').click(function() {
+            $('.number-answer').removeClass('selected'); // すべてのボタンからselectedクラスを削除
+            $(this).addClass('selected'); // クリックされたボタンにselectedクラスを追加
+        });
+        $('.popularity-answer').click(function() {
+            $('.popularity-answer').removeClass('selected'); // すべてのボタンからselectedクラスを削除
+            $(this).addClass('selected'); // クリックされたボタンにselectedクラスを追加
+        });
+        $('.inout-answer').click(function() {
+            $('.inout-answer').removeClass('selected'); // すべてのボタンからselectedクラスを削除
+            $(this).addClass('selected'); // クリックされたボタンにselectedクラスを追加
+        });
+
+        //お気に入りアイコンのクリックアクション
+        let fav_num = 0;
+        $(".fa-heart").on("click", function(){
+            $(this).toggleClass("fa-regular fa-solid");
+            const cardId = $(this).closest('.card').attr('id');
+            const isFav = $(this).hasClass("fa-solid");
+
+            // アイコンが「fa-solid」に変更されたときだけ、お気に入りの数を増やす
+            if (isFav) {
+                fav_num++;
+                localStorage.setItem(cardId, 'liked'); //お気に入りされたものはlikedとして保存
+            } else {
+                fav_num--;
+                localStorage.setItem(cardId, 'notLiked'); //お気に入りされていないものはnotLikedとして保存
+            }
+
+            if (fav_num>0){
+                $("#fav_count").css("display", "block");
+                $("#fav_count p").html(fav_num);
+            } else {
+                $("#fav_count").css("display", "none");
+            }    
+        });
+
+
+        
+        //----------------------ここからフィルタリング機能----------------------
+        //1.配列を定義
+        const array = [
+            { no: '01', name: 'スタンレーパーク', seasons: [{ season: "spring" }, { season: "summer" }, { season: "fall" }], numbers: [{ number: "1" }, { number: "2" }, { number: "3-4" }, {number: "5"}], popularity: 'popular', inout: "outdoor", cost: '-2' },
+            { no: '02', name: 'グランビルアイランド', seasons: [{ season: "spring" }, { season: "summer" }, { season: "fall" }, { season: "winter" }], numbers: [{ number: "1" }, { number: "2" }, { number: "3-4" }, {number: "5"}], popularity: 'popular', inout: "both", cost: '-2' },
+            { no: '03', name: 'グラウスマウンテン', seasons: [{ season: "spring" }, { season: "summer" }, { season: "fall" }], numbers: [{ number: "1" }, { number: "2" }, { number: "3-4" }, {number: "5"}], popularity: 'local', inout: "outdoor", cost: '2' },
+            { no: '04', name: 'ギャスタウン', seasons: [{ season: "spring" }, { season: "summer" }, { season: "fall" }, { season: "winter" }], numbers: [{ number: "1" }, { number: "2" }, { number: "3-4" }, {number: "5"}], popularity: 'popular', inout: "both", cost: '-2' },
+            { no: '05', name: 'キャピラノ吊橋公園', seasons: [{ season: "spring" }, { season: "summer" }, { season: "fall" }], numbers: [{ number: "1" }, { number: "2" }, { number: "3-4" }, {number: "5"}], popularity: 'popular', inout: "outdoor", cost: '2' },
+            { no: '06', name: 'バンクーバー水族館', seasons: [{ season: "spring" }, { season: "summer" }, { season: "fall" }, { season: "winter" }], numbers: [{ number: "1" }, { number: "2" }, { number: "3-4" }, {number: "5"}], popularity: 'local', inout: "indoor", cost: '1' },
+            { no: '07', name: 'サイエンスワールド', seasons: [{ season: "spring" }, { season: "summer" }, { season: "fall" }, { season: "winter" }], numbers: [{ number: "1" }, { number: "2" }, { number: "3-4" }, {number: "5"}], popularity: 'local', inout: "indoor", cost: '1' },
+            { no: '08', name: 'クイーンエリザベス公園', seasons: [{ season: "spring" }, { season: "summer" }, { season: "fall" }], numbers: [{ number: "1" }, { number: "2" }, { number: "3-4" }, {number: "5"}], popularity: 'popular', inout: "outdoor", cost: '-2' },
+            { no: '09', name: 'ライトハウスパーク', seasons: [{ season: "spring" }, { season: "summer" }, { season: "fall" }], numbers: [{ number: "1" }, { number: "2" }, { number: "3-4" }, {number: "5"}], popularity: 'local', inout: "outdoor", cost: '-2' },
+            { no: '10', name: 'バンクーバー展望台', seasons: [{ season: "spring" }, { season: "summer" }, { season: "fall" }, { season: "winter" }], numbers: [{ number: "1" }, { number: "2" }, { number: "3-4" }, {number: "5"}], popularity: 'popular', inout: "indoor", cost: '1' },
+        ];
+
+        //2.フィルターを関数化
+        let seasonSelected = "";
+        let numberSelected = "";
+        let popularitySelected = "";
+        let inoutSelected = "";
+        let costSelected = "";
+
+        function filterBySeason(season) {
+            seasonSelected = array.filter(item => item.seasons.some(s => s.season === season));
+            console.log(seasonSelected);
+        }
+
+        function filterByNumber(number) {
+            numberSelected = array.filter(n => n.numbers && n.numbers.some(s => s.number === number));
+            console.log(numberSelected);
+        }
+
+        function filterByPopularity(popularity) {
+            popularitySelected = array.filter(item => item.popularity === popularity);
+            console.log(popularitySelected);
+        }
+
+        function filterByInOut(inout) {
+            inoutSelected = array.filter(item => {
+                if (inout === "indoor") {
+                    return item.inout === "indoor" || item.inout === "both";
+                } else if (inout === "outdoor") {
+                    return item.inout === "outdoor" || item.inout === "both";
+                } else {
+                    return item.inout === "outdoor" || "both" || "indoor";
+                }
+            });
+            console.log(inoutSelected);
+        }
+
+        function filterByCost(cost) {
+            const numericCost = parseInt(cost, 10); // 文字列のコスト値を数値に変換
+            costSelected = array.filter(item => parseInt(item.cost, 10) <= numericCost); // 数値に変換されたコスト値以下の全アイテムをフィルタリング
+            console.log(costSelected); // フィルタリングされた結果をコンソールに出力
+        }
+
+        //3.クリックイベントを追加
+        $(".season-answer").on("click", function() {
+            filterBySeason(this.id);
+        });
+
+        $(".number-answer").on("click", function() {
+            filterByNumber(this.id);
+        });
+
+        $(".popularity-answer").on("click", function() {
+            filterByPopularity(this.id);
+        });
+
+        $(".inout-answer").on("click", function() {
+            filterByInOut(this.id);
+        });
+
+        $("#inputSlideBar").on("input", function() {
+            let inputValue = $(this).val();
+            $("#sliderValue").text(inputValue);
+            filterByCost(inputValue);
+        });
+
+        //4.診断結果の配列を作る
+        $("#send").on("click", function() {
+            $('#results').slideDown();
+            let filteredArray = array.filter(item => 
+                (seasonSelected.includes(item) || !seasonSelected.length) &&
+                (numberSelected.includes(item) || !numberSelected.length) &&
+                (popularitySelected.includes(item) || !popularitySelected.length) &&
+                (inoutSelected.includes(item) || !inoutSelected.length) &&
+                (costSelected.includes(item) || !costSelected.length)
+            );
+
+            console.log(filteredArray);
+            var n = filteredArray.length;
+            $("#hit").html(n);
+
+            $(".card").css("display", "none"); // 全てのカードを非表示にする
+            for (let i = 0; i < n; i++) {
+                $(`#${filteredArray[i].no}`).css("display", "block"); // filteredArrayに含まれる要素のみ表示する
+            }
+            $('html, body').animate({
+                scrollTop: $('#results').offset().top
+            }, 500);
+        });
+
+        //----------------------ここから診断結果リセット----------------------
+        $("#reset").on("click", function(){
+            // すべてのボタンからselectedクラスを削除
+            $('.season-answer').removeClass('selected');
+            $('.number-answer').removeClass('selected');
+            $('.popularity-answer').removeClass('selected');
+            $('.inout-answer').removeClass('selected');
+            
+            // スライダーの値をリセット
+            $('#inputSlideBar').val(0);
+
+            $('#results').slideUp(500, function() { // #resultsエリアをスライドアップして隠す
+            $('html, body').animate({ scrollTop: 0 }, 500); // トップに遷移する処理
+        });
+        })
+    
+    });
+
+        
+    </script>
+</body>
+</html>

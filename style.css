@@ -1,0 +1,316 @@
+h1 {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 48px;
+    line-height: 150%;
+    text-align: center;
+    color: #0D2B78;
+    margin: 0;
+}
+h2 {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 32px;
+    line-height: 150%;
+    text-align: center;
+    color: #0D2B78;
+    margin: 0;
+}
+h3 {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 24px;
+    line-height: 150%;
+    text-align: center;
+    color: #0D2B78;
+    margin: 0;
+}
+h4 {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 20px;
+    line-height: 150%;
+    text-align: center;
+    color: #0D2B78;
+    margin: 0;
+}
+h5 {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 18px;
+    line-height: 150%;
+    color: #0D2B78;
+    margin: 0;
+}
+p {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 16px;
+    line-height: 150%;
+    text-align: center;
+    color: #333333;
+    margin: 0;
+}
+.caption {
+    font-family: "Noto Sans JP", sans-serif;
+    font-size: 12px;
+    line-height: 120%;
+    color: white;
+}
+
+body {
+    margin: 0px;
+}
+main {
+    margin-top: 72px;
+}
+header {
+    position: fixed; /*** ← fixedで固定 ***/
+    top: 0; 
+    left: 0; 
+    width: 100%;
+    height: 72px;
+    align-items: center;
+    background-color: white;
+    z-index: 1;
+}
+.header-container {
+    margin: 0 auto;
+    padding: 14px;
+    max-width: 1000px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    font-size: 24px;
+    line-height: 100%;
+    font-weight: 700;
+    color: #D41010;
+    font-family: "Josefin Sans", sans-serif;
+    margin: 0 24px;
+}
+.links {
+    display: flex;
+    align-items: center;
+}
+a {
+    font-family: "Noto Sans JP", sans-serif;
+    text-decoration: none;
+    color: #333333;
+}
+.menu {
+    font-size: 16px;
+    line-height: 150%;
+    font-weight: 700;
+    margin-right: 24px;
+}
+#fav_count {
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    background-color: #D41010;
+    color: #fff;
+    align-items: center;
+    border-radius: 8px;
+    display: none;
+}
+#fav {
+    display: flex;
+
+}
+
+
+button:hover {
+    cursor: pointer;
+}
+.blue-btn {
+    font-family: "Noto Sans JP", sans-serif;
+    color: white;
+    background-color: #0D2B78;
+}
+.white-btn {
+    font-family: "Noto Sans JP", sans-serif;
+    color: #0D2B78;
+    background-color: white;
+    border: solid #0D2B78 1px;
+}
+.red-btn {
+    font-family: "Noto Sans JP", sans-serif;
+    color: white;
+    background-color: #D41010;
+    display: block;
+    margin: auto;
+    margin-top: 80px;
+}
+.sm {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 150%;
+    padding: 8px 16px;
+    border-radius: 4px;
+}
+.sm:hover {
+    opacity: 70%;
+}
+.md {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 150%;
+    padding: 12px 24px;
+    border-radius: 8px;
+    border: none;
+}
+.md:hover {
+    opacity: 70%;
+}
+/* 選択されたボタンのスタイル */
+.selected {
+    background-color: #0D2B78; /* 好みの色に変更 */
+    color: #fff; /* テキスト色も変更 */
+}
+
+
+#diagnosis {
+    margin: auto;
+    background-color: #FFF4F4;
+}
+.heading-area {
+    text-align: center;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+.underline {
+    margin-top: 16px;
+}
+.section {
+    padding: 80px 40px;
+}
+.questions {
+    max-width: 872px;
+    margin: 48px auto;
+     padding: 0 24px;
+}
+.question {
+    width: 100%;
+    margin-bottom: 64px;
+}
+.answers {
+    margin-top: 32px;
+    gap: 24px;
+    display: flex;
+}
+
+.season-answer, .number-answer {
+    width: 25%;
+}
+.popularity-answer {
+    width: 50%;
+}
+.inout-answer {
+    width: 33%;
+}
+.cost-answer {
+    width: 600px;
+}
+.label {
+    width: 120px;
+    font-weight: 600;
+    color: #0D2B78;
+}
+
+#results {
+    /* display: none;　※最後に直す */
+}
+.results-area {
+    background-color: #FFF4F4;
+}
+#hit {
+    font-weight: 600;
+    font-size: 20px;
+    color: #D41010;
+}
+.result-cards {
+    width: 1000px;
+    margin: auto;
+    margin-top: 64px;
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    grid-template-rows: 362px 362px;
+    gap: 40px;
+    justify-content: space-between
+}
+.card {
+    width: 100%;
+    height: 362px;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0px 4px 8px 3px rgba(0, 0, 0, 0.15), 0px 1px 3px 0px rgba(0, 0, 0, 0.30);
+}
+.card:hover {
+    box-shadow: 0px 0px 0px 0px rgba(0, 0, 0, 0.15), 0px 1px 3px 0px rgba(0, 0, 0, 0.30);
+}
+.text-area {
+    padding: 16px;
+    gap: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.explanation {
+    text-align: left;
+}
+.photo-container {
+    height: 196px;
+    width: 100%;
+    overflow: hidden;
+}
+.photo {
+    height: 196px;
+    width: 100%;
+    align-self: stretch;
+    border-radius: 8px 8px 0px 0px;
+    transition: transform .6s ease; /* ゆっくり変化させる */
+}
+.card:hover .photo {
+    transform: scale(1.2); /* 拡大 */
+}
+.photo:hover {
+    opacity: 70%;
+}
+h5:hover{
+    text-decoration: underline;
+}
+
+.fa-heart {
+    position: absolute;
+    right: 16px;
+    bottom: 138px; 
+}
+.fa-heart:hover {
+    cursor: pointer;
+}
+.fa-solid {
+    color: #D41010;
+
+}
+
+
+/* -----------------ここからfav/html用のCSS----------------- */
+
+.top {
+    margin-top: 72px;
+}
+
+.landmarks {
+    margin: 0 auto;
+}
+
+.deleteFav {
+    display: block;
+    margin: 0 auto;
+}
+
+#reDiagnose {
+    display: none;
+}
+
+#reDiagnose p {
+    margin-top: 40px;
+}

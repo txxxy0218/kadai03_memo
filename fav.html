@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="jp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>お気に入り｜FunFunVancouver</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <a href="index.html"><div class="logo">FunFunVancouver</div></a>
+            <div class="links">
+                <div id="fav" class="menu">
+                    <a href="fav.html" id="">お気に入り</a>
+                    <div id="fav_count" class="">
+                        <p class="caption">0</p>
+                    </div>
+                </div>
+                <a href="" id="save" class="menu">保存済みプラン</a>
+                <button class="blue-btn sm">おすすめ観光地診断</button>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="results-area section top">
+        <div class="landmarks">
+            <h3 div="fav-title">あなたのお気に入り</h3>
+
+            <button id="deleteFav" class="blue-btn sm">お気に入りをリセットする</button>
+            <div id="reDiagnose">
+                <p>お気に入りが登録されていません。</p>
+                <button class="red-btn md">もう一度おすすめ観光地診断を受ける</button>
+            </div>
+            
+
+            <div class="result-cards">
+
+                <div target="_blank" id="01" class="card">
+                    <div class="photo-container">
+                        <a href="https://maps.app.goo.gl/XJJSdgzW3j1LAUxw6" target="_blank">
+                            <img src="img/01.jpeg" alt="" class="photo">
+                        </a>
+                    </div>
+                    <div class="text-area">
+                        <a href="https://maps.app.goo.gl/XJJSdgzW3j1LAUxw6" target="_blank">
+                            <h5>スタンレーパーク</h5>
+                        </a>
+                        <p class="explanation"></p>説明文を入れる</p>
+                        <i class="fa-regular fa-heart fa-lg"></i>
+                    </div>
+                </div>
+
+                <div target="_blank" id="02" class="card">
+                    <div class="photo-container">
+                        <a href="https://maps.app.goo.gl/cJMAR6Ba4x7w5reG6" target="_blank">
+                            <img src="img/02.jpeg" alt="" class="photo">
+                        </a>
+                    </div>
+                    <div class="text-area">
+                        <a href="https://maps.app.goo.gl/cJMAR6Ba4x7w5reG6" target="_blank">
+                            <h5>グランビルアイランド</h5>
+                        </a>
+                        <p class="explanation"></p>説明文を入れる</p>
+                        <i class="fa-regular fa-heart fa-lg"></i>
+                    </div>
+                </div>
+
+                <div target="_blank" id="03" class="card">
+                    <div class="photo-container">
+                        <a href="https://maps.app.goo.gl/7cHusRfnnLgpP7Nz5" target="_blank">
+                            <img src="img/03.jpg" alt="" class="photo">
+                        </a>
+                    </div>
+                    <div class="text-area">
+                        <a href="https://maps.app.goo.gl/7cHusRfnnLgpP7Nz5" target="_blank">
+                            <h5>グラウスマウンテン</h5>
+                        </a>
+                        <p class="explanation"></p>説明文を入れる</p>
+                        <i class="fa-regular fa-heart fa-lg"></i>
+                    </div>
+                </div>
+
+                <div target="_blank" id="04" class="card">
+                    <div class="photo-container">
+                        <a href="https://maps.app.goo.gl/YA7b1hF8b9wbeeybA" target="_blank">
+                            <img src="img/04.jpeg" alt="" class="photo">
+                        </a>
+                    </div>
+                    <div class="text-area">
+                        <a href="https://maps.app.goo.gl/YA7b1hF8b9wbeeybA" target="_blank">
+                            <h5>ギャスタウン</h5>
+                        </a>
+                        <p class="explanation"></p>説明文を入れる</p>
+                        <i class="fa-regular fa-heart fa-lg"></i>
+                    </div>
+                </div>
+
+                <div target="_blank" id="05" class="card">
+                    <div class="photo-container">
+                        <a href="https://maps.app.goo.gl/e4futCwbcYMM9DxZ9" target="_blank">
+                            <img src="img/05.jpeg" alt="" class="photo">
+                        </a>
+                    </div>
+                    <div class="text-area">
+                        <a href="https://maps.app.goo.gl/e4futCwbcYMM9DxZ9" target="_blank">
+                            <h5>キャピラノ吊橋公園</h5>
+                        </a>
+                        <p class="explanation"></p>説明文を入れる</p>
+                        <i class="fa-regular fa-heart fa-lg"></i>
+                    </div>
+                </div>
+
+                <div target="_blank" id="06" class="card">
+                    <div class="photo-container">
+                        <a href="https://maps.app.goo.gl/XJJSdgzW3j1LAUxw6" target="_blank">
+                            <img src="img/06.jpeg" alt="" class="photo">
+                        </a>
+                    </div>
+                    <div class="text-area">
+                        <a href="https://maps.app.goo.gl/XJJSdgzW3j1LAUxw6" target="_blank">
+                            <h5>バンクーバー水族館</h5>
+                        </a>
+                        <p class="explanation"></p>説明文を入れる</p>
+                        <i class="fa-regular fa-heart fa-lg"></i>
+                    </div>
+                </div>
+
+                <div target="_blank" id="07" class="card">
+                    <div class="photo-container">
+                        <a href="https://maps.app.goo.gl/SdhEVfvVFZbCuA3k6" target="_blank">
+                            <img src="img/07.jpg" alt="" class="photo">
+                        </a>
+                    </div>
+                    <div class="text-area">
+                        <a href="https://maps.app.goo.gl/SdhEVfvVFZbCuA3k6" target="_blank">
+                            <h5>サイエンスワールド</h5>
+                        </a>
+                        <p class="explanation"></p>説明文を入れる</p>
+                        <i class="fa-regular fa-heart fa-lg"></i>
+                    </div>
+                </div>
+
+                <div target="_blank" id="08" class="card">
+                    <div class="photo-container">
+                        <a href="https://maps.app.goo.gl/iu1g3Yu4DLtqGYPN6" target="_blank">
+                            <img src="img/08.jpeg" alt="" class="photo">
+                        </a>
+                    </div>
+                    <div class="text-area">
+                        <a href="https://maps.app.goo.gl/iu1g3Yu4DLtqGYPN6" target="_blank">
+                            <h5>クイーンエリザベス公園</h5>
+                        </a>
+                        <p class="explanation"></p>説明文を入れる</p>
+                        <i class="fa-regular fa-heart fa-lg"></i>
+                    </div>
+                </div>
+
+                <div target="_blank" id="09" class="card">
+                    <div class="photo-container">
+                        <a href="https://maps.app.goo.gl/yZom97yJSFiwLPYu6" target="_blank">
+                            <img src="img/09.jpeg" alt="" class="photo">
+                        </a>
+                    </div>
+                    <div class="text-area">
+                        <a href="https://maps.app.goo.gl/yZom97yJSFiwLPYu6" target="_blank">
+                            <h5>ライトハウスパーク</h5>
+                        </a>
+                        <p class="explanation"></p>説明文を入れる</p>
+                        <i class="fa-regular fa-heart fa-lg"></i>
+                    </div>
+                </div>
+
+                <div target="_blank" id="10" class="card">
+                    <div class="photo-container">
+                        <a href="https://maps.app.goo.gl/sTX2BWvFrswKT4Ww6" target="_blank">
+                            <img src="img/10.jpeg" alt="" class="photo">
+                        </a>
+                    </div>
+                    <div class="text-area">
+                        <a href="https://maps.app.goo.gl/sTX2BWvFrswKT4Ww6" target="_blank">
+                            <h5>バンクーバー展望台</h5>
+                        </a>
+                        <p class="explanation"></p>説明文を入れる</p>
+                        <i class="fa-regular fa-heart fa-lg"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        $(document).ready(function() {
+
+        //----------------------ここから見た目の装飾系----------------------
+
+        //お気に入りアイコンのクリックアクション
+        let fav_num = 0;
+        $(".fa-heart").on("click", function(){
+            $(this).toggleClass("fa-regular fa-solid");
+            const cardId = $(this).closest('.card').attr('id');
+            const isFav = $(this).hasClass("fa-solid");
+
+            // アイコンが「fa-solid」に変更されたときだけ、お気に入りの数を増やす
+            if (isFav) {
+                fav_num++;
+                localStorage.setItem(cardId, 'liked');
+            } else {
+                fav_num--;
+                localStorage.setItem(cardId, 'notLiked');
+            }
+
+            if (fav_num>0){
+                $("#fav_count").css("display", "block");
+                $("#fav_count p").html(fav_num);
+            } else {
+                $("#fav_count").css("display", "none");
+            }    
+        });
+
+
+        
+        
+
+        //----------------------ここからお気に入りリセット----------------------
+        $("#deleteFav").on("click", function(){
+            // すべてのハートアイコンをregularに戻す
+            if ($(""))
+            $('.fa-heart').removeClass('fa-solid');
+            $('.fa-heart').addClass('fa-regular');
+
+            // ヘッダーのアイコンを消す
+            $("#fav_count").css("display", "none");
+
+            // favのカウントをリセットする
+            let fav_num = 0;
+            console.log(fav_num);
+
+            // 全てのカードを非表示にする
+            $(".card").css("display", "none");
+
+            // LocalStorageをリセットする
+            localStorage.clear();
+
+            //アラート
+            alert("お気に入りを削除しました");
+
+            // お気に入り削除ボタンを消して、再診断を促す
+            $(this).css("display", "none");
+            $("#reDiagnose").css("display", "block");
+
+        });
+    
+    });
+
+        
+    </script>
+
+    
+</body>
+</html>
