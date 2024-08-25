@@ -214,7 +214,7 @@ button:hover {
 }
 
 #results {
-    /* display: none;　※最後に直す */
+    display: none;
 }
 .results-area {
     background-color: #FFF4F4;
