@@ -39,3 +39,4 @@ https://txxxy0218.github.io/kadai03_memo/
   - 
 - [参考記事]
   - 1. avaScriptでなんちゃってECサイトの実装：https://qiita.com/SuenagaRyoko/items/3f9f0deb5233225ea3c1
+    2. 異なるドメイン間でlocalstorageを共有する方法：https://qiita.com/Sr_Bangs/items/94c255d16f1a3caa0cdd
