@@ -206,12 +206,12 @@
 
         //----------------------ここから見た目の装飾系----------------------
 
-        //お気に入りされているカードのみ表示する
-        if (localStorage.getItem("01") === "liked"){
-            $("#01").css("display", "block");
-        } else {
-            $("#01").css("display", "none");
-        }
+        // //お気に入りされているカードのみ表示する
+        // if (localStorage.getItem("01") === "liked"){
+        //     $("#01").css("display", "block");
+        // } else {
+        //     $("#01").css("display", "none");
+        // }
 
 
         //お気に入りアイコンのクリックアクション
@@ -250,28 +250,28 @@
 
 
         //----------------------異なるドメイン間でのデータのやり取り----------------------
-        (function() {
-            var iframeWindow = document.querySelector('#iframe').contentWindow;
-            var $text = document.querySelector('#text');
-            // var $setButton = document.querySelector('#set');
-            // var $getButton = document.querySelector('#get');
-            var origin = 'https://txxxy0218.github.io/kadai03_memo/';
+        // (function() {
+        //     var iframeWindow = document.querySelector('#iframe').contentWindow;
+        //     var $text = document.querySelector('#text');
+        //     // var $setButton = document.querySelector('#set');
+        //     // var $getButton = document.querySelector('#get');
+        //     var origin = 'https://txxxy0218.github.io/kadai03_memo/';
 
             
-            if(event.origin === origin) {
-                // index.htmlからお気に入り数を取得
-                iframeWindow.postMessage('fav_count', origin);
-                // index.htmlからお気に入りされているカードの番号を取得
-                iframeWindow.postMessage('fav.id', origin);
+        //     if(event.origin === origin) {
+        //         // index.htmlからお気に入り数を取得
+        //         iframeWindow.postMessage('fav_count', origin);
+        //         // index.htmlからお気に入りされているカードの番号を取得
+        //         iframeWindow.postMessage('fav.id', origin);
 
-                // index.htmlにお気に入り数を送信
-                iframeWindow.postMessage(`${$text.value}`, origin);
+        //         // index.htmlにお気に入り数を送信
+        //         iframeWindow.postMessage(`${$text.value}`, origin);
 
-                // index.htmlにお気に入りされているカードの番号を送信
-                iframeWindow.postMessage(`${$text.value}`, origin);
-            }
+        //         // index.htmlにお気に入りされているカードの番号を送信
+        //         iframeWindow.postMessage(`${$text.value}`, origin);
+        //     }
 
-        })();
+        // })();
         
         
 
