@@ -14,6 +14,9 @@
 </head>
 <body>
 
+    <!-- display:noneで非表示にしたiframeでindex.htmlを読み込む -->
+    <iframe id="iframe" src="https://txxxy0218.github.io/kadai03_memo/" style="display: none;"></iframe>
+
     <header>
         <div class="header-container">
             <a href="index.html"><div class="logo">FunFunVancouver</div></a>
@@ -203,6 +206,14 @@
 
         //----------------------ここから見た目の装飾系----------------------
 
+        //お気に入りされているカードのみ表示する
+        if (localStorage.getItem("01") === "liked"){
+            $("#01").css("display", "block");
+        } else {
+            $("#01").css("display", "none");
+        }
+
+
         //お気に入りアイコンのクリックアクション
         let fav_num = 0;
         $(".fa-heart").on("click", function(){
@@ -213,10 +224,10 @@
             // アイコンが「fa-solid」に変更されたときだけ、お気に入りの数を増やす
             if (isFav) {
                 fav_num++;
-                localStorage.setItem(cardId, 'liked');
+                localStorage.setItem(cardId, 'liked'); //お気に入りされたものはlikedとして保存
             } else {
                 fav_num--;
-                localStorage.setItem(cardId, 'notLiked');
+                localStorage.setItem(cardId, 'notLiked'); //お気に入りから外されたものはnotLikedとして保存
             }
 
             if (fav_num>0){
@@ -224,17 +235,49 @@
                 $("#fav_count p").html(fav_num);
             } else {
                 $("#fav_count").css("display", "none");
-            }    
+            }
+
+            localStorage.setItem("fav_num", fav_num);
         });
 
 
+        //お気に入りカウンターの表示設定
+        if(localStorage.getItem("fav_num")){
+            const value = localStorage.getItem("fav_num");
+            $("#fav_count").css("display", "block");
+            $("#fav_count").val(value);
+        }
+
+
+        //----------------------異なるドメイン間でのデータのやり取り----------------------
+        (function() {
+            var iframeWindow = document.querySelector('#iframe').contentWindow;
+            var $text = document.querySelector('#text');
+            // var $setButton = document.querySelector('#set');
+            // var $getButton = document.querySelector('#get');
+            var origin = 'https://txxxy0218.github.io/kadai03_memo/';
+
+            
+            if(event.origin === origin) {
+                // index.htmlからお気に入り数を取得
+                iframeWindow.postMessage('fav_count', origin);
+                // index.htmlからお気に入りされているカードの番号を取得
+                iframeWindow.postMessage('fav.id', origin);
+
+                // index.htmlにお気に入り数を送信
+                iframeWindow.postMessage(`${$text.value}`, origin);
+
+                // index.htmlにお気に入りされているカードの番号を送信
+                iframeWindow.postMessage(`${$text.value}`, origin);
+            }
+
+        })();
         
         
 
         //----------------------ここからお気に入りリセット----------------------
         $("#deleteFav").on("click", function(){
             // すべてのハートアイコンをregularに戻す
-            if ($(""))
             $('.fa-heart').removeClass('fa-solid');
             $('.fa-heart').addClass('fa-regular');
 

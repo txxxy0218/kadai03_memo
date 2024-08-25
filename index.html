@@ -309,8 +309,40 @@
                 $("#fav_count p").html(fav_num);
             } else {
                 $("#fav_count").css("display", "none");
-            }    
+            }
+
+            localStorage.setItem("fav_num", fav_num);
         });
+
+        //お気に入りカウンターの表示設定
+        if(localStorage.getItem("fav_num")){
+            const value = localStorage.getItem("fav_num");
+            $("#fav_count").val(value);
+        }
+
+        // //----------------------異なるドメイン間でのローカルストレージの情報交換----------------------
+        // (function() {
+        //     var origin = "https://txxxy0218.github.io/kadai03_memo/fav.html";
+        //     window.addEventListener('favItem', function(event) {
+        //         // 送信元が指定のオリジンと一致していれば処理を行う
+        //         if(event.origin === origin) {
+        //             var favItem = event.data;
+
+        //             // メッセージが'get'ならlocalstorageの値を返す
+        //             if(favItem === 'get') {
+        //                 var storageData = localStorage.getItem('test');
+        //                 event.source.postMessage(storageData, event.origin);
+        //             }
+        //             // getでなければメッセージを分割してlocalstorageに保存する
+        //             else {
+        //                 var messageArray = favItem.split(',');
+        //                 var key = messageArray[0];
+        //                 var value = messageArray[1];
+        //                 localStorage.setItem(key, value);
+        //             }
+        //         }
+        //     });
+        // })();
 
 
         
